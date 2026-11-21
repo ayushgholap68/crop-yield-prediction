@@ -23,11 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent
 # LOAD MODEL AND METADATA
 # ==========================================
 
+
 @st.cache_resource
 def load_model():
     return joblib.load(
-        BASE_DIR / "crop_yield_model.pkl"
+        BASE_DIR / "crop_yield_model_compressed.pkl"
     )
+
 
 @st.cache_data
 def load_metadata():
